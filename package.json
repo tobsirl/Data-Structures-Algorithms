@@ -16,5 +16,14 @@
   "bugs": {
     "url": "https://github.com/tobsirl/Data-Structures-Algorithms/issues"
   },
-  "homepage": "https://github.com/tobsirl/Data-Structures-Algorithms#readme"
+  "homepage": "https://github.com/tobsirl/Data-Structures-Algorithms#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.0.1",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^5.14.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0"
+  }
 }
