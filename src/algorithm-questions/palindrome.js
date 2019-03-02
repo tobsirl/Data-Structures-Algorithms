@@ -6,8 +6,8 @@ export function isPalindrome(string) {
     .split('')
     .reduce(
       (characters, character) => (validCharacters.indexOf(character) > -1
-          ? characters.concat(character)
-          : characters),
+        ? characters.concat(character)
+        : characters),
       []
     );
   return stringCharacters.join('') === stringCharacters.reverse().join('');
