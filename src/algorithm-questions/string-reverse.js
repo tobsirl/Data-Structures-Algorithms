@@ -6,10 +6,16 @@ export function reverse(string) {
     .join('');
 }
 
+// iterative approach
 export function _reverse(string) {
   let result = '';
   for (const char of string) {
     result = char + result;
   }
   return result;
+}
+
+// using the reduce method
+export function __reverse(string) {
+  string.split('').reduce((result, char) => char + result);
 }
