@@ -1,3 +1,4 @@
+// Using the includes method
 function vowels(str) {
   let counter = 0;
   const checker = ['a', 'e', 'i', 'o', 'u'];
@@ -11,6 +12,7 @@ function vowels(str) {
   return counter;
 }
 
+// Using Regex
 function _vowels(str) {
   const matches = str.match(/[aeiou]/gi);
   return matches ? matches.length : 0;
