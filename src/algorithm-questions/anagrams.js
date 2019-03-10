@@ -23,6 +23,7 @@ const anagrams = (stringA, stringB) => {
   return true;
 };
 
+// ------------------------------------------------------------------------
 function anagrams(stringA, stringB) {
   const aCharMap = buildCharMap(stringA);
   const bCharMap = buildCharMap(stringB);

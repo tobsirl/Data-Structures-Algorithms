@@ -27,3 +27,19 @@ export {
 export {
   default as StackLinkedList
 } from './data-structures/stack-linked-list';
+
+// chapter 06
+export { default as Set } from './data-structures/set';
+
+// chapter 07
+export { default as Dictionary } from './data-structures/dictionary';
+export { default as HashTable } from './data-structures/hash-table';
+export {
+  default as HashTableSeparateChaining
+} from './data-structures/hash-table-separate-chaining';
+export {
+  default as HashTableLinearProbing
+} from './data-structures/hash-table-linear-probing';
+export {
+  default as HashTableLinearProbingLazy
+} from './data-structures/hash-table-linear-probing-lazy';
