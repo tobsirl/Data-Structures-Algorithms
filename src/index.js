@@ -45,11 +45,13 @@ export {
 } from './data-structures/hash-table-linear-probing-lazy';
 
 // chapter 08
-export { default as factorialIterative } from './others/factorial';
-export { default as factorial } from './others/factorial';
-export { default as fibonacci } from './others/fibonacci';
-export { default as fibonacciIterative } from './others/fibonacci';
-export { default as fibonacciMemoization } from './others/fibonacci';
+export { default as factorialIterative } from './algorithm-questions/factorial';
+export { default as factorial } from './algorithm-questions/factorial';
+export { default as fibonacci } from './algorithm-questions/fibonacci';
+export { default as fibonacciIterative } from './algorithm-questions/fibonacci';
+export {
+  default as fibonacciMemoization
+} from './algorithm-questions/fibonacci';
 
 // chapter 09
 export {

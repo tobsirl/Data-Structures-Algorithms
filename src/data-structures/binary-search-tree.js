@@ -28,16 +28,16 @@ export default class BinarySearchTree {
   }
 
   insertNode(node, key) {
-    if (this.compareFn(key, node.key) === Compare.LESS_THAN) {
-      if (node.left == null) {
-        node.left = new Node(key);
+    if (this.compareFn(key, node.key) === Compare.LESS_THAN) { // check if node key is less than current node
+      if (node.left == null) { // check if the left side is free
+        node.left = new Node(key); // insert the new key into as the left node
       } else {
-        this.insertNode(node.left, key);
+        this.insertNode(node.left, key); // descend a level in the tree and call insertNode recursively
       }
-    } else if (node.right == null) {
-      node.right = new Node(key);
+    } else if (node.right == null) { // if the node is greater than the current node key and there is no right child
+      node.right = new Node(key); // insert the key into the right child
     } else {
-      this.insertNode(node.right, key);
+      this.insertNode(node.right, key); // call the insertNode method recursively
     }
   }
 }
