@@ -141,7 +141,7 @@ export default class BinarySearchTree {
     if (node.left == null) {
       node = node.right;
       return node;
-    } else if (node.right == null) {
+    } if (node.right == null) {
       node = node.left;
       return node;
     }
