@@ -1,21 +1,25 @@
 // Using reverse method
-module.exports = function reverse(string) {
+function reverse(string) {
   return string
     .split('')
     .reverse()
     .join('');
-};
+}
 
 // iterative approach
-module.exports = function _reverse(string) {
+function _reverse(string) {
   let result = '';
   for (const char of string) {
     result = char + result;
   }
   return result;
-};
+}
 
 // using the reduce method
-module.exports = function __reverse(string) {
+function __reverse(string) {
   string.split('').reduce((result, char) => char + result);
-};
+}
+
+module.exports.reverse = reverse;
+module.exports._reverse = _reverse;
+module.exports.__reverse = __reverse;
