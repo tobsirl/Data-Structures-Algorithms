@@ -16,3 +16,12 @@ export const _reverseArray = array => {
   }
   return array;
 };
+
+// Recursive verson
+function reverseRecursion(arr) {
+  // add whatever parameters you deem necessary - good luck!
+  if (arr.length <= 1) {
+    return arr;
+  }
+  return reverseRecursion(arr.slice(1)) + arr[0];
+}
