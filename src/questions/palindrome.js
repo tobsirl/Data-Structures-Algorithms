@@ -6,8 +6,8 @@ export function isPalindrome(string) {
     .split('')
     .reduce(
       (characters, character) => (validCharacters.indexOf(character) > -1
-        ? characters.concat(character)
-        : characters),
+          ? characters.concat(character)
+          : characters),
       []
     );
   return stringCharacters.join('') === stringCharacters.reverse().join('');
@@ -33,4 +33,11 @@ export function __isPalindrome(string) {
       .reverse()
       .join('')
   );
+}
+
+function isPalindrome(str) {
+  if (str.length === 1) return true;
+  if (str.length === 2) return str[0] === str[1];
+  if (str[0] === str.slice(-1)) return isPalindrome(str.slice(1, -1));
+  return false;
 }
