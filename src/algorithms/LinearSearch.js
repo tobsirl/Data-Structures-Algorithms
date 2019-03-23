@@ -3,7 +3,7 @@
 //  Loop through the array and check if the current array element is equal to the value
 //  If it is, return the index at which the element is found
 //  If the value is never found, return -1
-//
+// O(n) linear
 
 function linearSearch(arr, val) {
   // eslint-disable-next-line no-restricted-syntax
@@ -11,6 +11,13 @@ function linearSearch(arr, val) {
     if (item === val) {
       return arr.indexOf(val);
     }
+  }
+  return -1;
+}
+
+function linearSearch(arr, val) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === val) return i;
   }
   return -1;
 }
