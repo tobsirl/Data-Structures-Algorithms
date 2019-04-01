@@ -175,10 +175,10 @@ class SinglyLinkedList {
       newTail = current; // newTail points to the previous node
       current = current.next; // current moves on to the next node
     }
-    this.tail = newTail;
-    this.tail.next = null;
-    this.length--;
-    if (this.length === 0) {
+    this.tail = newTail; // tail is now point to the new tail
+    this.tail.next = null; // breaks the connection with the last node
+    this.length--; // decrement length since node has been removed
+    if (this.length === 0) { // when the list have zero nodes set the head and tail to null
       this.head = null;
       this.tail = null;
     }
