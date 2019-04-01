@@ -165,6 +165,25 @@ class SinglyLinkedList {
     this.length++;
     return this;
   }
+
+  pop() {
+    if (!this.head) return undefined; // If there are no nodes in the list, return undefined
+    // set two varibles to keep track, both point at the same node to begin with
+    let current = this.head; // Points at the current node
+    let newTail = current; // Both start at the same position in the LL
+    while (current.next) { // while there is another node
+      newTail = current; // newTail points to the previous node
+      current = current.next; // current moves on to the next node
+    }
+    this.tail = newTail;
+    this.tail.next = null;
+    this.length--;
+    if (this.length === 0) {
+      this.head = null;
+      this.tail = null;
+    }
+    return current;
+  }
 }
 
 // var first = new Node("Hi")
