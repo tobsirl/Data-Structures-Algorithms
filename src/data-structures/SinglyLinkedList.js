@@ -171,18 +171,31 @@ class SinglyLinkedList {
     // set two varibles to keep track, both point at the same node to begin with
     let current = this.head; // Points at the current node
     let newTail = current; // Both start at the same position in the LL
-    while (current.next) { // while there is another node
+    while (current.next) {
+      // while there is another node
       newTail = current; // newTail points to the previous node
       current = current.next; // current moves on to the next node
     }
     this.tail = newTail; // tail is now point to the new tail
     this.tail.next = null; // breaks the connection with the last node
     this.length--; // decrement length since node has been removed
-    if (this.length === 0) { // when the list have zero nodes set the head and tail to null
+    if (this.length === 0) {
+      // when the list have zero nodes set the head and tail to null
       this.head = null;
       this.tail = null;
     }
     return current;
+  }
+
+  shift() {
+    if (!this.head) return undefined; // If there are no nodes in the list, return undefined
+    const currentHead = this.head; // create a varible to store the current head
+    this.head = currentHead.next; // point this.head at the next node
+    this.length--; // decrement length since a node has been removed
+    if (this.length === 0) { // if the length is equal to zero, no nodes
+      this.tail = null; // reset the tail
+    }
+    return currentHead;
   }
 }
 
