@@ -192,10 +192,26 @@ class SinglyLinkedList {
     const currentHead = this.head; // create a varible to store the current head
     this.head = currentHead.next; // point this.head at the next node
     this.length--; // decrement length since a node has been removed
-    if (this.length === 0) { // if the length is equal to zero, no nodes
+    if (this.length === 0) {
+      // if the length is equal to zero, no nodes
       this.tail = null; // reset the tail
     }
     return currentHead;
+  }
+
+  unshift(val) {
+    const newNode = new Node(val); // create a new node passing the val
+    if (!this.head) {
+      // check if there is no head
+      // if no head is present set head and tail to the new node
+      this.head = newNode;
+      this.tail = this.head;
+    } else {
+      newNode.next = this.head; // point the newNode at the head
+      this.head = newNode; // update the head to the newNode
+    }
+    this.length++; // increment the length
+    return this; // return the linked list
   }
 }
 
