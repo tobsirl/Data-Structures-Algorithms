@@ -35,7 +35,7 @@ function radixSort(nums) {
     const digitBuckets = Array.from({ length: 10 }, () => []); // create the buckets
     for (let i = 0; i < nums.length; i++) {
       const digit = getDigit(nums[i], k); // get the digit
-      digitBuckets[digit].push(nums[i]); // put the number into the bucket 
+      digitBuckets[digit].push(nums[i]); // put the number into the bucket
     }
     nums = [].concat(...digitBuckets); // place the numbers into a new array
   }
