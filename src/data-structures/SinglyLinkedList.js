@@ -237,7 +237,7 @@ class SinglyLinkedList {
   }
 
   insert(index, val) {
-    if (index < 0 || index > this.length) return false; 
+    if (index < 0 || index > this.length) return false;
     if (index === this.length) return !!this.push(val); // last item use push
     if (index === 0) return !!this.unshift(val); // index 0 add to the front of the list
 
@@ -248,6 +248,17 @@ class SinglyLinkedList {
     newNode.next = temp; // assign the newnode to the temp variable
     this.length++; // increment the length
     return true;
+  }
+
+  remove(index) {
+    if (index < 0 || index >= this.length) return undefined;
+    if (index === 0) return this.shift(); // romove the first node
+    if (index === this.length - 1) return this.pop(); // remove the last node
+    const previousNode = this.get(index - 1); // set prviousNode to the node one before
+    const removed = previousNode.next; // removed stores the node to be removed
+    previousNode.next = removed.next; // point the previous node to removed.next
+    this.length--;
+    return removed;
   }
 }
 
