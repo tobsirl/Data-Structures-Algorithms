@@ -225,6 +225,15 @@ class SinglyLinkedList {
     }
     return current; // return the current
   }
+
+  set(index, val) {
+    const foundNode = this.get(index); // use the get method to find the node
+    if (foundNode) { // if the node is found
+      foundNode.val = val; // assign it to val
+      return true;
+    }
+    return false;
+  }
 }
 
 // var first = new Node("Hi")
