@@ -228,11 +228,26 @@ class SinglyLinkedList {
 
   set(index, val) {
     const foundNode = this.get(index); // use the get method to find the node
-    if (foundNode) { // if the node is found
+    if (foundNode) {
+      // if the node is found
       foundNode.val = val; // assign it to val
       return true;
     }
     return false;
+  }
+
+  insert(index, val) {
+    if (index < 0 || index > this.length) return false; 
+    if (index === this.length) return !!this.push(val); // last item use push
+    if (index === 0) return !!this.unshift(val); // index 0 add to the front of the list
+
+    const newNode = new Node(val); // create a new node
+    const prev = this.get(index - 1); // connect prev to the node before
+    const temp = prev.next; // create a temp variable to hold the previous value
+    prev.next = newNode; // point the previous node to the new node
+    newNode.next = temp; // assign the newnode to the temp variable
+    this.length++; // increment the length
+    return true;
   }
 }
 
