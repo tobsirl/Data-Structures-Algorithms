@@ -213,6 +213,18 @@ class SinglyLinkedList {
     this.length++; // increment the length
     return this; // return the linked list
   }
+
+  get(index) {
+    if (index < 0 || index >= this.length) return null;
+    let counter = 0; // setup a counter variable
+    let current = this.head; // setup current and point it at the head
+    while (counter !== index) {
+      // while counter is not equal to index
+      current = current.next; // move current through the SLL
+      counter++;
+    }
+    return current; // return the current
+  }
 }
 
 // var first = new Node("Hi")
