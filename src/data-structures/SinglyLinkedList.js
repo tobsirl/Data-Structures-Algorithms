@@ -154,15 +154,15 @@ class SinglyLinkedList {
   }
 
   push(val) {
-    const newNode = new Node(val);
-    if (!this.head) {
+    const newNode = new Node(val); // create a new node passing in the value
+    if (!this.head) { // if the list is empty set the head and tail to the new node
       this.head = newNode;
       this.tail = this.head;
     } else {
-      this.tail.next = newNode;
-      this.tail = newNode;
+      this.tail.next = newNode; // set the next node to the newNode
+      this.tail = newNode; // update the tail to the newNode
     }
-    this.length++;
+    this.length++; // increment the length
     return this;
   }
 
@@ -259,6 +259,21 @@ class SinglyLinkedList {
     previousNode.next = removed.next; // point the previous node to removed.next
     this.length--;
     return removed;
+  }
+
+  reverse() {
+    let node = this.head; // create node variable and point it at the head
+    this.head = this.tail; // swap the head and tail
+    this.tail = node; // assign node to tail
+    let next; // create a variable next
+    let prev = null; // create a variable prev
+    for (let i = 0; i < this.length; i++) {
+      next = node.next; // point next at node.next
+      node.next = prev; // we switch the arrow
+      prev = node; // previous is set to node
+      node = next; // node is assigned to next
+    }
+    return this;
   }
 
   print() {
