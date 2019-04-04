@@ -260,6 +260,17 @@ class SinglyLinkedList {
     this.length--;
     return removed;
   }
+
+  print() {
+    const arr = []; // setup an array
+    let current = this.head; // create variable current and point at the head
+    while (current) {
+      // while current has a value
+      arr.push(current.val); // add the current val to the array
+      current = current.next; // move current to the next node
+    }
+    console.log(arr); // print out the contents of arr
+  }
 }
 
 // var first = new Node("Hi")
