@@ -50,13 +50,30 @@ class DoublyLinkedList {
     if (this.length === 1) {
       this.head = null;
       this.tail = null;
+    } else {
+      this.head = temp.next; // sever the pointers to the old node
+      this.head.prev = null;
+      temp.next = null;
     }
-    this.head = temp.next; // sever the pointers to the old node
-    this.head.prev = null;
-    temp.next = null;
 
     this.length--; // decrement the list length
     return temp;
+  }
+
+  unshift(value) {
+    const newNode = new Node(value); // create new node with the value
+    if (this.length === 0) {
+      // check if the list is empty, assign head/tail to null
+      this.head = null;
+      this.tail = null;
+    } else {
+      this.head.prev = newNode;
+      newNode.next = this.head;
+      this.head = newNode;
+    }
+
+    this.length++; // increment the list
+    return this;
   }
 }
 
