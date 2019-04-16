@@ -97,6 +97,15 @@ class DoublyLinkedList {
     }
     return current;
   }
+
+  set(index, value) {
+    const foundNode = this.get(index);
+    if (foundNode != null) {
+      foundNode.value = value;
+      return true;
+    }
+    return false;
+  }
 }
 
 const LinkedList = new DoublyLinkedList();
