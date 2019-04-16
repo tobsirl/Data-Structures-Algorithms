@@ -75,6 +75,28 @@ class DoublyLinkedList {
     this.length++; // increment the list
     return this;
   }
+
+  get(index) {
+    if (index < 0 || index >= this.length) return null; // check that the index isn't out of bounds
+    let count;
+    let current;
+    if (index <= this.length / 2) {
+      count = 0; // define a count variable
+      current = this.head; // create current and point at the head
+      while (count !== index) {
+        current = current.next;
+        count++;
+      }
+    } else {
+      count = this.length - 1; // start at the end of the list
+      current = this.tail;
+      while (count !== index) {
+        current = current.prev; // work backwards through the list
+        count--;
+      }
+    }
+    return current;
+  }
 }
 
 const LinkedList = new DoublyLinkedList();
