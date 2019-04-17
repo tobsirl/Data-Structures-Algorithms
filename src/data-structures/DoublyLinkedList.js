@@ -108,21 +108,40 @@ class DoublyLinkedList {
   }
 
   insert(index, value) {
-    if (index < 0 || index > this.length) return false;
-    if (index === 0) return !!this.unshift(value);
-    if (index === this.length) return !!this.pop(value);
+    if (index < 0 || index > this.length) return false; // check for out of bounds
+    if (index === 0) return !!this.unshift(value); // add new node to beginning
+    if (index === this.length) return !!this.pop(value); // add new node to the end of the list
 
-    const newNode = new Node(value);
-    const prevNode = this.get(index - 1);
+    const newNode = new Node(value); // create a new node
+    const prevNode = this.get(index - 1); // get access to the previous node
     const nextNode = prevNode.next;
 
-    prevNode.next = newNode;
+    prevNode.next = newNode; // attach the pointers to the newly inserted node
     newNode.prev = prevNode;
-    newNode.next = nextNode;
+    newNode.next = nextNode; // attach the pointers to the newly inserted node
     nextNode.prev = newNode;
 
-    this.length++;
-    return true;
+    this.length++; // increment the length
+    return true; // node successfully inserted
+  }
+
+  remove(index) {
+    if (index < 0 || index >= this.length) return undefined; // check for out of bounds
+    if (index === 0) return this.shift();
+    if (index === this.length - 1) return this.pop();
+
+    const removedNode = this.get(index);
+    const prevNode = removedNode.prev;
+    const nextNode = removedNode.next;
+    prevNode.next = nextNode;
+    nextNode.prev = prevNode;
+    // removedNode.prev.next = removedNode.next;
+    // removedNode.next.prev = removedNode.prev;
+    removedNode.next = null;
+    removedNode.prev = null;
+
+    this.length--;
+    return removedNode;
   }
 }
 
