@@ -72,7 +72,7 @@ function validAnagram(first, second) {
   for (let i = 0; i < first.length; i++) {
     const letter = first[i];
     // if letter exists, increment, otherwise set to 1
-    lookup[letter] ? lookup[letter] += 1 : lookup[letter] = 1;
+    lookup[letter] ? (lookup[letter] += 1) : (lookup[letter] = 1);
   }
   console.log(lookup);
 
@@ -83,7 +83,6 @@ function validAnagram(first, second) {
       return false;
     }
     lookup[letter] -= 1;
-
   }
 
   return true;
@@ -91,3 +90,20 @@ function validAnagram(first, second) {
 
 // {a: 0, n: 0, g: 0, r: 0, m: 0,s:1}
 validAnagram('anagrams', 'nagaramm');
+
+// LeetCode Anagram example
+const isAnagram = function (s, t) {
+  const charMap = {};
+  s.split('').map(
+    char => (charMap[char] = charMap[char] ? charMap[char] + 1 : 1)
+  );
+  t.split('').map(
+    char => (charMap[char] = charMap[char] ? charMap[char] - 1 : -1)
+  );
+  return Object.keys(charMap).every(k => charMap[k] === 0);
+};
+
+const s = 'anagram';
+const t = 'nagaram';
+
+console.log(isAnagram(s, t));
