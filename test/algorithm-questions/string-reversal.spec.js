@@ -1,7 +1,14 @@
-const { assert } = require('chai');
-const reverse = require('../../src/algorithm-questions/string-reversal');
-const _reverse = require('../../src/algorithm-questions/string-reversal');
-const __reverse = require('../../src/algorithm-questions/string-reversal');
+import { assert } from 'chai';
+
+// const reverse = require('../../src/algorithm-questions/string-reversal');
+// const _reverse = require('../../src/algorithm-questions/string-reversal');
+// const __reverse = require('../../src/algorithm-questions/string-reversal');
+
+import {
+  reverse,
+  _reverse,
+  __reverse
+} from '../../src/questions/string-reversal';
 
 // describe('String Reversal', () => {
 //   it('Should reverse string', () => {
