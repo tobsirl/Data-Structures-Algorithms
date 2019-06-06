@@ -25,5 +25,14 @@ class Queue {
     return this.size; // return the size
   }
 
-  dequeue() {}
+  dequeue() {
+    if (!this.first) return null; // check if the queue is empty
+    const temp = this.first; // create a variable called temp store the this.first
+    if (this.first === this.last) {
+      this.last = null;
+    }
+    this.first = this.first.next; // update this.first to be the next node
+    this.size--; // decrement the queue size
+    return temp.value; // return the value in temp
+  }
 }
