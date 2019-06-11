@@ -1,4 +1,4 @@
-//! Binary Search Pseudocode
+//* Binary Search Pseudocode
 // 	• This function accepts a sorted array and a value
 // 	• Create a left pointer at the start of the array, and a right pointer at the end of the array.
 // 	• While the left pointer comes before the right pointer:
