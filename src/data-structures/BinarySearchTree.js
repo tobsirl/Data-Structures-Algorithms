@@ -50,7 +50,7 @@ class BinarySearchTree {
       } else if (value > current.value) { // if the value is greater then current
         current = current.right; // set current to the right value
       } else {
-        found = true; // Set found to true 
+        found = true; // Set found to true
       }
     }
     if (!found) return undefined; // if not found return undefined
