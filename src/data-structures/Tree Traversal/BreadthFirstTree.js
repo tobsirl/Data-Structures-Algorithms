@@ -68,4 +68,16 @@ class BinarySearchTree {
     }
     return data;
   }
+
+  DFSPreOrder() {
+    const data = []; // create an array to store the data
+    function traverse(node) {
+      // helper function to traverse a tree
+      data.push(node.value); // push the value into data
+      if (node.left) traverse(node.left); // check for a left property, call traverse with the left node
+      if (node.right) traverse(node.right); // check for a right property, call traverse with the right node
+    }
+    traverse(this.root); // call traverse with the current node
+    return data; // return the data array
+  }
 }
